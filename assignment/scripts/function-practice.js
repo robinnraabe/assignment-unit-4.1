@@ -11,7 +11,6 @@ function hello() {
 // Call the function to test
 console.log('Test - should say "Hello World!"', hello());
 
-
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName(name) {
@@ -56,12 +55,12 @@ function getLast(array) {
     return 'undefined';
   }
   else {
-  return array[array.length-1];
+    return array[array.length-1];
   }
 
 }
 console.log('The last item in the array is', getLast([1,2,3,4,5]));
-console.log('The last item in the array is', getLast(['blue', 'pink', 'yellow', 'peach']));
+console.log('The last item in the array is', getLast(['blue', 'pink', 'yellow', 'peach'])), '"';
 console.log('The last item in the array is', getLast([]));
 
 // 7. Function to find a value in an array. Return true if the 
@@ -91,25 +90,42 @@ console.log('Is "orange" included in the array?', find('orange',['blue', 'pink',
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  stringArray = string.split('');
+  if (stringArray[0] === letter) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
-
+console.log('Is "a" the first letter in "apple"?', isFirstLetter('a', 'apple'));
+console.log('Is "e" the first letter in "apple"?', isFirstLetter('e', 'apple'));
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll() {
+function sumAll(array) {
   let sum = 0;
   // TODO: loop to add items
-
+  for (item of array) {
+    sum += item;
+  }
   // TODO: return the sum
+  return sum;
 }
+console.log('The sum of [1, 2, 3, 4, 5] is', sumAll([1, 2, 3, 4, 5]));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-function allPositive() {
-
+function allPositive(array) {
+  newArray = [];
+  for (item of array) {
+    if (item > 0) {
+      newArray.push(item);
+    }
+  }
+  return newArray;
 }
-
+console.log('The positive numbers in [-2, -1, 0, 1, 2] are', allPositive([-2, -1, 0, 1, 2, 3]));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
