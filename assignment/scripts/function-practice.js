@@ -130,6 +130,29 @@ console.log('The positive numbers in [-2, -1, 0, 1, 2] are', allPositive([-2, -1
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+// From CodeWars:
+//     "Create a function called _if which takes 3 arguments: 
+//     A value bool and 2 functions (which do not take any parameters): func1 and func2
+//     When bool is truthy, func1 should be called, otherwise call the func2."
+function logTrue() {
+  console.log('This logs True');
+}
+function logFalse() {
+  console.log('This logs False');
+}
+function _if(bool, func1, func2) {
+  if (bool === true) {
+    func1();
+  }
+  else {
+    func2();
+  }
+}
+_if(true, logTrue, logFalse);
+_if(1==1, logTrue, logFalse);
+_if(false, logTrue, logFalse);
+_if('hamburger', logTrue, logFalse);
+
 
 
 // DO NOT MODIFY
